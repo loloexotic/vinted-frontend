@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "./components/Header";
 import Home from "./pages/Home/Home";
 import Offer from "./pages/Offer/Offer";
+import User from "./pages/Signup";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/offer/:id" element={<Offer />} />
+        <Route path="/signup" element={<User />} />
       </Routes>
     </Router>
   );
