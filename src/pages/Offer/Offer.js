@@ -1,11 +1,31 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Link, useParams } from "react-router-dom";
 
-const Offer = () => {
+const Offer = (offer) => {
+  const [data, setData] = useState();
+  const [isLoading, setIsLoading] = useEffect(true);
+  const params = useParams();
+  const id = params.id;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get();
+        setData(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    fetchData();
+  }, []);
   return (
-    <div>
-      <h1>yes Offer</h1>
-      <Link to="/">Home</Link>
-    </div>
+    <article>
+      <div>
+        <Link to="/">Retour à la page d'accueil</Link>
+      </div>
+    </article>
   );
 };
 
