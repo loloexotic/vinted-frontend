@@ -31,7 +31,9 @@ const Home = () => {
     <div>
       <section className="hero">
         <h1>Prêts à faire du tri dans vos placards ? </h1>
-        <button>Commencer à vendre</button>
+        <Link to="/publish">
+          <button>Commencer à vendre</button>
+        </Link>
       </section>
 
       <section className="Intro">

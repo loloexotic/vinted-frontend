@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const SingleOffer = ({ offerInfos }) => {
   return (
-    <Link to={"/offer/publish"}>
+    <Link to={"/offer/${offerInfos._id}"}>
       <article>
         <div>
           {offerInfos.owner.account.avatar && (
