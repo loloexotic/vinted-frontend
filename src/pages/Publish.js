@@ -1,16 +1,32 @@
+import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import Login from "./Login";
+import { Link, Navigate } from "react-router-dom";
 
 const Publish = () => {
   const [file, setFile] = useState({});
+  const [picture, setPicture] = useState();
 
-  return Login ? (
+  const Token = async () => {
+    const response = await axios.post(
+      "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
+      params,
+      {
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  };
+
+  return Token ? (
     <div>
-      <form
-        action="
-    "
-      >
+      <form>
+        <input
+          type="file"
+          onChange={(event) => {
+            setPicture(event.target.files[0]);
+          }}
+        />
         <section>
           <label htmlFor="Titre">
             Titre
@@ -52,11 +68,11 @@ const Publish = () => {
           <span>Je suis interéssé(e) par les échanges</span>
         </div>
 
-        <button>Ajouter</button>
+        <button type="submit">Ajouter</button>
       </form>
     </div>
   ) : (
-    <Link to="/login"></Link>
+    <Navigate to="/login"></Navigate>
   );
 };
 

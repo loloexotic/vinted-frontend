@@ -12,6 +12,18 @@ const SingleOffer = ({ offerInfos }) => {
         </div>
         <img src={offerInfos.product_image.secure_url} alt="" />
         <p>{offerInfos.product_price}</p>
+        <div>
+
+
+          {offerInfos.product_details.map((detail,index)=>
+          {
+            (detail.TAILLE) && (detail.MARQUE)? (<p key={index}>{detail.TAILLE}</p> 
+            <p key={index}>{detail.MARQUE}</p>)
+          })};
+        
+  
+
+        </div>
       </article>
     </Link>
   );

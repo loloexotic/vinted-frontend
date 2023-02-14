@@ -1,5 +1,7 @@
 import User from "../pages/Signup";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
+
 const Header = () => {
   const handleClick = (user) => {
     return User;
@@ -7,11 +9,18 @@ const Header = () => {
 
   return (
     <header>
-      <img
-        src="https://www.leclubargent.com/wp-content/uploads/2021/07/vinted_logo.png"
-        className="App-logo"
-        alt="logo-vinted"
-      />
+      <Link to="/">
+        <img
+          src="https://www.leclubargent.com/wp-content/uploads/2021/07/vinted_logo.png"
+          className="App-logo"
+          alt="logo-vinted"
+        />
+      </Link>
+
+      <div className="searchbar">
+        <SearchBar />
+      </div>
+
       <Link to="/signup">
         <div className="signup">
           <button type="submit" onClick={handleClick}>

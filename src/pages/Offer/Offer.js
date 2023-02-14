@@ -21,7 +21,7 @@ const Offer = (offer) => {
       }
     };
     fetchData();
-  }, []);
+  }, [id]);
   return (
     <article>
       <div>

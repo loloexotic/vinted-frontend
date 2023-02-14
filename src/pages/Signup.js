@@ -7,10 +7,14 @@ const User = () => {
   const [password, setPassword] = useState("");
   const [newsletter, setNewsletter] = useState(false);
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+  };
+
   return (
     <div>
       <h1>S'inscrire</h1>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <input
           value={username}
           type="text"
@@ -39,7 +43,13 @@ const User = () => {
           }}
         />
         <div>
-          <input type="checkbox" />
+          <input
+            value={newsletter}
+            type="checkbox"
+            onChange={() => {
+              setNewsletter(newsletter);
+            }}
+          />
           <span>S'inscrire à notre newsletter</span>
           <p>
             En m'inscrivant je confirme avoir lu et accepté les Termes &
@@ -47,7 +57,12 @@ const User = () => {
             avoir au moins 18 ans.
           </p>
         </div>
-        <button type="submit">S'inscrire</button>
+        <button
+          disabled={!username || !email || !password ? true : false}
+          type="submit"
+        >
+          S'inscrire
+        </button>
         <Link to="/login"> Tu as déjà un compte ? Connecte-toi !</Link>
       </form>
     </div>
