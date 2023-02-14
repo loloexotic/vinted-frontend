@@ -2,6 +2,7 @@
   width: 1280px;
 }
 
+/* HEADER */
 .App-logo {
   height: 60px;
   pointer-events: none;
@@ -31,6 +32,23 @@
   color: white;
   background-color: #2db0ba;
 }
-.App-link {
-  color: #61dafb;
+
+/* HOME PAGE */
+.Showoffers {
+  display: flex;
+  justify-items: center;
+  flex-wrap: wrap;
+}
+
+.Avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  object-fit: cover;
+}
+
+.Productowner img {
+  height: 350px;
+  width: 150px;
+  object-fit: cover;
 }

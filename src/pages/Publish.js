@@ -13,7 +13,7 @@ const Publish = () => {
   const [place, setPlace] = useState("");
   const [price, setPrice] = useState("");
 
-  const handleToken = async (event) => {
+  const handlePublishOffer = async (event) => {
     event.preventDefault();
     try {
       const formData = new FormData();

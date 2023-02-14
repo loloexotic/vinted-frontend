@@ -22,11 +22,19 @@ const Offer = (offer) => {
     };
     fetchData();
   }, [id]);
-  return (
-    <article>
-      <div>
-        <Link to="/">Retour à la page d'accueil</Link>
-      </div>
+  return isLoading ? (
+    <p>En cours de chargement...</p>
+  ) : (
+    <article className="detailoffers">
+      <img src={data.product_image.secure_url} alt="" />
+      <p>{data.product_price} €</p>
+      <p>{data.product_name}</p>
+      <p>{data.product_description}</p>
+      <p>{data.owner.account.username}</p>
+      <Link to="/payment">
+        <button type="submit">Ajouter</button>
+      </Link>
+      <Link to="/">Retour à la page d'accueil</Link>
     </article>
   );
 };

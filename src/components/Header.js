@@ -1,11 +1,10 @@
 import User from "../pages/Signup";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import Cookies from "js-cookie";
 
 const Header = () => {
-  const handleClick = (user) => {
-    return User;
-  };
+  const token = Cookies.get("token");
 
   return (
     <header>
@@ -23,9 +22,7 @@ const Header = () => {
 
       <Link to="/signup">
         <div className="signup">
-          <button type="submit" onClick={handleClick}>
-            S'inscrire
-          </button>
+          <button type="submit">S'inscrire</button>
         </div>
       </Link>
       <Link to="/login">
