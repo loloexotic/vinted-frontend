@@ -10,6 +10,7 @@ const User = () => {
   const [newsletter, setNewsletter] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
+  const token = Cookies.get("token");
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -32,6 +33,15 @@ const User = () => {
       }
     } catch (error) {
       console.log(error.message);
+      if (error.response.data.message === error.status(401)) {
+        setErrorMessage(
+          "Email déjà utilisé, veuillez utiliser une autre adresse mail."
+        );
+      }
+
+      if (error.response.data.message === error.status(422)) {
+        setErrorMessage("Tous les champs sont requis");
+      }
     }
   };
 

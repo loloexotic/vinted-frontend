@@ -1,4 +1,5 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
 
@@ -12,6 +13,8 @@ const Publish = () => {
   const [condition, setCondition] = useState("");
   const [place, setPlace] = useState("");
   const [price, setPrice] = useState("");
+
+  const token = Cookies.get("token");
 
   const handlePublishOffer = async (event) => {
     event.preventDefault();
