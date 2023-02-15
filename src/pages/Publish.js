@@ -47,14 +47,14 @@ const Publish = () => {
 
   return token ? (
     <div>
-      <form>
+      <form className="publish" onSubmit={handlePublishOffer}>
         <input
           type="file"
           onChange={(e) => {
             setPicture(e.target.files[0]);
           }}
         />
-        <section>
+        <section className="firstsection">
           <label htmlFor="Titre">
             Titre
             <input
@@ -124,7 +124,7 @@ const Publish = () => {
             />
           </label>
         </section>
-        <div>
+        <div className="lastsection">
           <label htmlFor="">
             Prix
             <input

@@ -22,7 +22,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div>
+    <div className="searchbar">
       <input
         value={searchOffer}
         type="text"
